@@ -54,6 +54,6 @@ cf: https://d3uxlvfm5znb4w.cloudfront.net
 s3: http://aws-rs-app-bucket-auto.s3-website-eu-west-1.amazonaws.com/
 cf: https://d2yx7eaunl8s8i.cloudfront.net
 
-**Auto Deploy Link with (npm run cloudfront:update:build:deploy):**
+**Auto Deploy Link with serverless-single-page-app-plugin (npm run cloudfront:update:build:deploy):**
 s3: http://aws-rs-app-bucket.s3-website-eu-west-1.amazonaws.com/
 cf: https://d3dxqglx2gx5kn.cloudfront.net
