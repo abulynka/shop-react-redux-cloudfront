@@ -7,6 +7,7 @@ provider:
   runtime: nodejs12.x
   # setup profile for AWS CLI.
   profile: default
+  region: eu-west-1
 
 plugins:
   - serverless-finch
@@ -17,7 +18,7 @@ plugins:
 
 custom:
   client:
-    bucketName: aws-rs-app-bucket-auto
+    bucketName: aws-rs-app-bucket
     distributionFolder: build
   s3BucketName: ${self:custom.client.bucketName}
 
