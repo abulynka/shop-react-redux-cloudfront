@@ -108,7 +108,10 @@ export default function PageProductForm() {
 
   const onSubmit = (values: FormikValues) => {
     const formattedValues = ProductSchema.cast(values);
-    const productToSave = id ? {...ProductSchema.cast(formattedValues), id} : formattedValues;
+    const productToSave: any = id ? {...ProductSchema.cast(formattedValues), id} : formattedValues;
+    if (productToSave.hasOwnProperty('count')) {
+      productToSave['count'] = parseInt(productToSave['count']);
+    }
     axios.post(
       `${API_PATHS.bff}/products`,
       productToSave,
