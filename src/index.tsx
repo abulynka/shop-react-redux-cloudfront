@@ -13,8 +13,20 @@ axios.interceptors.response.use(
     return response;
   },
   function(error) {
-    if (error?.response?.status === 400) {
-      alert(error.response.data?.data);
+    const status = error?.response?.status;
+
+    switch (status) {
+      case 400:
+        alert(error.response.data?.data);
+        break;
+
+      case 401:
+        alert('Unauthorized (401)');
+        break;
+
+      case 403:
+        alert('Forbidden (403)');
+        break;
     }
 
     return Promise.reject(error?.response ?? error);
